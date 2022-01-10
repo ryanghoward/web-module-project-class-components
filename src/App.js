@@ -25,41 +25,6 @@ class App extends React.Component {
     };
   }
 
-  toggleFinished = () => {
-    const updatedToDoList = this.state.thingsToDo.map((todo) => {
-      if (todo.id === todoId) {
-        return { ...todo, finished: !todo.finished}
-      } else {
-        return todo;
-      }
-    })
-
-    this.setState({
-      ...this.state,
-      thingsToDo: updatedToDoList,
-    })
-  }
-
-  addToDo = (todoName) => {
-    this.setState({
-      thingsToDo: [
-        ...this.state.thingsToDo,
-        {
-          task: todoName,
-          id: Date.now,
-          finished: false,
-        },
-      ],
-    });
-  };
-
-  clearFinished = () => {
-    this.setState({
-      ...this.state,
-      thingsToDo: this.state.thingsToDo.filter((todo) => !todo.finished),
-    });
-  };
-
   render() {
     return (
       <div>
