@@ -28,10 +28,21 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h2>Welcome to your Todo App!</h2>
-        <input placeholder='New Task...'></input>
-        <button>Add New Task</button>
-        <button>Clear Completed Tasks</button>
+        <h1>Tasks I Have To Do</h1>
+        <ul>
+          <li>Taxes</li>
+          <li>Get Groceries</li>
+          <li>Feed my Cat</li>
+          <li>Cook Dinner</li>
+          <li>Workout</li>
+
+          <form>
+            <input placeholder='New Task...'/>
+            <button>Add Task</button>
+          </form>
+
+          <button>Clear Completed Tasks</button>
+        </ul>
       </div>
     );
   }
