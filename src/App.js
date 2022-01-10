@@ -18,21 +18,32 @@ class App extends React.Component {
           task: 'Bake Cookies',
           id: 1528817084358,
           completed: false
-        }
+        },
+        {
+          task: 'Taxes',
+          id: 1528817077286,
+        },
+        {
+          task: 'Workout',
+          id: 1528817077286,
+        },
       ] 
     }
   }
 
   render() {
+    const { tasksToDo } = this.state;
+    console.log(tasksToDo);
     return (
       <div>
         <h1>Tasks I Have To Do</h1>
         <ul>
-          <li>Taxes</li>
-          <li>Get Groceries</li>
-          <li>Feed my Cat</li>
-          <li>Cook Dinner</li>
-          <li>Workout</li>
+          {
+            tasksToDo.map(todo => {
+              return (<li>{todo.task}</li>)
+            })
+          }
+        </ul>
 
           <form>
             <input placeholder='New Task...'/>
@@ -40,7 +51,6 @@ class App extends React.Component {
           </form>
 
           <button>Clear Completed Tasks</button>
-        </ul>
       </div>
     );
   }
