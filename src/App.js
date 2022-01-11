@@ -34,6 +34,19 @@ class App extends React.Component {
     });
   }
 
+  handleAdd = (task) => {
+    const newTask = {
+      task: task,
+      id: Date.now(),
+      completed: false
+    };
+
+    this.setState({
+      ...this.state,
+      tasksToDo: [...this.state.tasksToDo, newTask]
+    });
+  }
+
   render() {
     const { tasksToDo } = this.state;
 
@@ -41,7 +54,7 @@ class App extends React.Component {
       <div>
         <h1>Tasks I Have To Do</h1>
         <TodoList tasksToDo={tasksToDo} />
-        <TodoForm />
+        <TodoForm handleAdd={this.handleAdd} />
         <button onClick={this.handleClear}>Clear Completed Tasks</button>
       </div>
     );
