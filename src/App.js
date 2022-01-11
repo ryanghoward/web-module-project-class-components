@@ -1,4 +1,5 @@
 import React from 'react';
+import Todo from './components/Todo';
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -32,7 +33,7 @@ class App extends React.Component {
         <ul>
           {
             tasksToDo.map(todo => {
-              return (<li>{todo.task} { todo.completed ? <span> - Completed</span> : <span></span> }</li>)
+              return (<Todo todo={todo}/>)
             })
           }
         </ul>
