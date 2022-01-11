@@ -1,5 +1,5 @@
 import React from 'react';
-import Todo from './components/Todo';
+import TodoList from './components/TodoList';
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -30,13 +30,8 @@ class App extends React.Component {
     return (
       <div>
         <h1>Tasks I Have To Do</h1>
-        <ul>
-          {
-            tasksToDo.map(todo => {
-              return (<Todo todo={todo}/>)
-            })
-          }
-        </ul>
+
+        <TodoList tasksToDo={tasksToDo} />
 
           <form>
             <input placeholder='New Task...'/>
