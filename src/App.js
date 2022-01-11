@@ -19,28 +19,20 @@ class App extends React.Component {
           id: 1528817084358,
           completed: false
         },
-        {
-          task: 'Taxes',
-          id: 1528817077286,
-        },
-        {
-          task: 'Workout',
-          id: 1528817077286,
-        },
       ] 
     }
   }
 
   render() {
     const { tasksToDo } = this.state;
-    console.log(tasksToDo);
+
     return (
       <div>
         <h1>Tasks I Have To Do</h1>
         <ul>
           {
             tasksToDo.map(todo => {
-              return (<li>{todo.task}</li>)
+              return (<li>{todo.task} { todo.completed ? <span> - Completed</span> : <span></span> }</li>)
             })
           }
         </ul>
